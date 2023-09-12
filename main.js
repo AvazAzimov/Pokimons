@@ -5,6 +5,7 @@ var elSelect = document.querySelector(".js-select");
 
 function pokeFunc(info){ 
   elList.innerHTML = null;
+  var fragment = document.createDocumentFragment()
   for (const poke of info) {
     
     var pokeItem = document.createElement("li");
@@ -34,9 +35,8 @@ function pokeFunc(info){
     
     
     pokeItem.append(pokeTitle,pokeNum,pokeImg,pokeWeight,pokeTime,pokeText);
-    elList.appendChild(pokeItem);
-    
-    
+    fragment.appendChild(pokeItem)
+    elList.appendChild(fragment);
   }
 }
 
