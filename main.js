@@ -91,6 +91,9 @@ function SelSort(pokeArr,optVal) {
       
     })
   }
+  if (optVal == "All") {
+    return 0;
+  }
 }
 
 function weightSort(pokeArr,weightVal) {
@@ -107,15 +110,18 @@ function weightSort(pokeArr,weightVal) {
   }
   if (weightVal == "Min") {
     pokeArr.sort((a,b)=> {
-      if (a.spawn_chance > b.spawn_chance) {
+      if (a.weight > b.weight) {
         return -1;
-      }else if (a.spawn_chance < b.spawn_chance) {
+      }else if (a.weight < b.weight) {
         return 1;
       }else {
         return 0;
       }
       
     })
+  }
+  if (weightVal == "All") {
+    return 0;
   }
 }
 elForm.addEventListener("submit", function (evt) {
